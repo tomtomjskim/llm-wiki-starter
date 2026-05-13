@@ -22,12 +22,12 @@ cd ~/wiki-starter
 # 2. wiki 디렉토리 초기화
 bash scripts/init-wiki.sh
 
-# 3. 프로젝트에 Agent 지침 템플릿 복사 (필요한 것만)
+# 3. Obsidian에서 ~/wiki 폴더를 vault로 열기
+#    (Obsidian 앱 → Open folder as vault → ~/wiki 선택)
+
+# 4. 프로젝트에 Agent 지침 템플릿 복사 (필요한 것만)
 cp templates/agents/AGENTS.md /path/to/your-project/AGENTS.md
 cp templates/agents/CLAUDE.md /path/to/your-project/CLAUDE.md
-
-# 4. Obsidian에서 ~/wiki 폴더를 vault로 열기
-#    (Obsidian 앱 → Open folder as vault → ~/wiki 선택)
 
 # 5. frontmatter 검사 실행 (선택)
 python3 scripts/lint-frontmatter.py ~/wiki

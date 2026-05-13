@@ -50,7 +50,30 @@ bash scripts/init-wiki.sh
 
 `raw/`는 원본 수집, `personal/`은 인간이 책임지는 개인 지식, `compiled/`는 Agent가 코드나 raw를 읽고 생성한 구조화 문서다.
 
-## 2. Agent에 wiki 위치 알려주기
+## 2. Obsidian에서 바로 보기
+
+Obsidian은 wiki를 탐색하고 편집하는 기본 UI다.
+
+설치:
+
+```bash
+# macOS Homebrew 사용 시
+brew install --cask obsidian
+```
+
+또는 [obsidian.md](https://obsidian.md)에서 앱을 설치한다.
+
+열기:
+
+```
+Obsidian → Open folder as vault → ~/wiki 선택
+```
+
+이 단계 이후 `raw/`, `personal/`, `compiled/` 폴더를 왼쪽 파일 탐색기에서 바로 볼 수 있다. Agent가 작성한 `~/wiki/compiled/codebase/<domain>/` 문서도 Obsidian에서 즉시 확인한다.
+
+상세 설정: [docs/02-setup/04-obsidian-vault-setup.md](./02-setup/04-obsidian-vault-setup.md)
+
+## 3. Agent에 wiki 위치 알려주기
 
 Codex를 쓰면 프로젝트 루트에 `AGENTS.md`를 둔다.
 
@@ -66,7 +89,7 @@ cp templates/agents/CLAUDE.md /path/to/your-project/CLAUDE.md
 
 템플릿 안의 `<your-domain>`과 도메인 표는 실제 프로젝트에 맞게 줄인다. 이 파일들은 wiki를 생성하지 않는다. Agent가 `~/wiki`를 어디서 찾아야 하는지, 어떤 규칙으로 읽고 업데이트해야 하는지 알려준다.
 
-## 3. 첫 도메인 compile 하기
+## 4. 첫 도메인 compile 하기
 
 프로젝트 루트에서 Agent를 실행하고 다음처럼 요청한다.
 
@@ -84,7 +107,7 @@ src/orders/ 디렉토리를 읽고
 
 더 자세한 실습: [docs/03-workflow/00-first-compile-walkthrough.md](./03-workflow/00-first-compile-walkthrough.md)
 
-## 4. 검증하기
+## 5. 검증하기
 
 ```bash
 python3 ~/wiki-starter/scripts/lint-frontmatter.py ~/wiki --verbose
@@ -97,7 +120,7 @@ wc -l ~/wiki/compiled/codebase/orders/*.md
 - 도메인 폴더에 `_index.md`, `overview.md`, `domain-rules.md`, `db-schema.md`, `api-contracts.md`, `code-map.md`, `known-issues.md`가 있어야 한다.
 - 너무 긴 파일은 분할하거나 다음 compile 때 범위를 줄인다.
 
-## 5. Ask 단계로 사용하기
+## 6. Ask 단계로 사용하기
 
 Claude Code:
 
@@ -117,6 +140,7 @@ Codex:
 ## 다음
 
 - 디렉토리 원리: [docs/02-setup/02-directory-layout.md](./02-setup/02-directory-layout.md)
+- Obsidian 설정: [docs/02-setup/04-obsidian-vault-setup.md](./02-setup/04-obsidian-vault-setup.md)
 - Claude Code 연동: [docs/02-setup/03-claude-code-integration.md](./02-setup/03-claude-code-integration.md)
 - Codex 연동: [docs/02-setup/05-codex-integration.md](./02-setup/05-codex-integration.md)
 - Claude Code + Codex 병행 운영: [docs/06-advanced/03-dual-agent-workflow.md](./06-advanced/03-dual-agent-workflow.md)
