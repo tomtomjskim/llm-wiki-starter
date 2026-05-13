@@ -25,6 +25,12 @@ status: active
 - 프로젝트 코드 분석과 wiki 작성은 Claude Code, Codex 같은 Agent에게 명시적으로 요청해야 한다.
 - Skill은 아직 자동 설치 대상이 아니다. 반복 작업을 안정화할 때 별도로 만들거나 설치한다.
 
+팀원이 wiki를 쓰지 않는 경우:
+- 프로젝트 작업은 계속 가능하다.
+- Agent는 repository 파일과 프로젝트 문서를 기준으로 작업한다.
+- `~/wiki` 또는 도메인 wiki가 없으면 “wiki context unavailable”로 보고하고 넘어간다.
+- wiki 기반 문서화가 필요할 때만 이 starter kit를 clone하고 `scripts/init-wiki.sh`를 실행한다.
+
 상세 원리: [docs/02-setup/00-mental-model.md](./02-setup/00-mental-model.md)
 
 ## 1. wiki 폴더 만들기

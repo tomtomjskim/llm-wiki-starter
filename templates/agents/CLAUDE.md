@@ -23,10 +23,11 @@ Claude memory stores recurring behavior rules and feedback. It should not contai
 
 - Before domain work, read the matching `_index.md` if it exists.
 - Reading relevant wiki context is expected when it exists; writing or updating wiki requires an explicit user request or an approved final update step.
+- If `~/wiki` or a referenced wiki page does not exist, continue from repository files and report that wiki context was unavailable. Do not fail the task only because wiki is missing.
 - If wiki and code disagree, trust code and report the wiki update needed.
 - Do not use `~/wiki/compiled/` as a scratchpad during implementation.
 - Update wiki after implementation, tests, and review are complete.
-- Run `python3 ~/wiki-starter/scripts/lint-frontmatter.py ~/wiki --error-only` after wiki edits.
+- Run `python3 ~/wiki-starter/scripts/lint-frontmatter.py ~/wiki --error-only` after wiki edits when the starter repo and wiki are available.
 
 ## Claude Code + Codex
 

@@ -20,10 +20,11 @@ Before changing a domain, inspect the matching wiki folder when it exists. Treat
 - Keep code as the final source of truth.
 - Do not copy long domain facts into this file; link to wiki paths instead.
 - Reading relevant wiki context is expected when it exists; writing or updating wiki requires an explicit user request or an approved final update step.
+- If `~/wiki` or a referenced wiki page does not exist, continue from repository files and report that wiki context was unavailable. Do not fail the task only because wiki is missing.
 - Update compiled wiki only after code changes are implemented, tested, and reviewed.
 - If you discover stale or missing wiki knowledge during implementation, record it in the final report unless the user explicitly asks you to update wiki files immediately.
 - Run the project test command before finalizing code changes.
-- Run `python3 ~/wiki-starter/scripts/lint-frontmatter.py ~/wiki --error-only` after wiki edits.
+- Run `python3 ~/wiki-starter/scripts/lint-frontmatter.py ~/wiki --error-only` after wiki edits when the starter repo and wiki are available.
 
 ## Claude Code + Codex
 
