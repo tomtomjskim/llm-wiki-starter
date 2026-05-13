@@ -22,6 +22,7 @@ Claude memory stores recurring behavior rules and feedback. It should not contai
 ## Working Rules
 
 - Before domain work, read the matching `_index.md` if it exists.
+- Reading relevant wiki context is expected when it exists; writing or updating wiki requires an explicit user request or an approved final update step.
 - If wiki and code disagree, trust code and report the wiki update needed.
 - Do not use `~/wiki/compiled/` as a scratchpad during implementation.
 - Update wiki after implementation, tests, and review are complete.

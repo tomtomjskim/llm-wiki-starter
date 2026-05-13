@@ -137,6 +137,33 @@ Codex:
 코드와 wiki가 충돌하면 코드를 기준으로 보고, wiki 업데이트 필요 항목을 마지막에 알려줘.
 ```
 
+## 7. 이후 작업할 때 기본 요청
+
+프로젝트에 `AGENTS.md` 또는 `CLAUDE.md`가 있어도 wiki가 자동으로 계속 작성되지는 않는다. 관련 wiki를 읽는 것은 기대 동작이고, wiki에 쓰는 것은 명시 요청 또는 승인된 최종 업데이트 단계다.
+
+일반 작업 기본형:
+
+```text
+<작업 내용>을 진행해줘.
+
+시작 전에:
+- AGENTS.md / CLAUDE.md 확인
+- 관련 도메인 wiki가 있으면 먼저 읽기
+
+작업 후:
+- 코드 변경 검증
+- wiki 업데이트 필요 항목 보고
+- 내가 승인하기 전에는 ~/wiki/compiled/ 문서를 수정하지 않기
+```
+
+wiki까지 바로 반영할 때:
+
+```text
+작업 완료 후 코드와 wiki가 달라진 부분이 있으면
+~/wiki/compiled/codebase/<domain>/ 문서도 업데이트해줘.
+업데이트 후 lint도 실행해줘.
+```
+
 ## 다음
 
 - 디렉토리 원리: [docs/02-setup/02-directory-layout.md](./02-setup/02-directory-layout.md)

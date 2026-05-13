@@ -16,6 +16,7 @@ status: active
 - `templates/agents/AGENTS.md`, `templates/agents/CLAUDE.md` 추가.
 - README Quick Start를 Agent 지침 템플릿 사용 흐름에 맞게 정리.
 - Start Here에 Obsidian 설치와 `~/wiki` vault 열기 단계를 명시.
+- 일반 작업 세션에서 wiki 읽기와 쓰기 경계를 명시.
 - agent 지침 템플릿은 실제 프로젝트 복사용 파일이므로 frontmatter lint 대상에서 제외.
 - codebase compile frontmatter 예시를 실제 linter 규칙과 일치하도록 수정.
 - 아직 구현되지 않은 orphan check 명령 예시를 future work 설명으로 정정.
