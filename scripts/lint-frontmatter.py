@@ -70,6 +70,10 @@ def extract_frontmatter(content: str) -> Optional[Dict[str, str]]:
 def check_file(filepath: Path, verbose: bool = False) -> List[Dict[str, str]]:
     """파일 하나를 검사해서 이슈 목록을 반환."""
     issues = []
+    normalized_path = str(filepath)
+
+    if "/templates/agents/" in normalized_path:
+        return issues
 
     try:
         content = filepath.read_text(encoding="utf-8")
@@ -86,7 +90,7 @@ def check_file(filepath: Path, verbose: bool = False) -> List[Dict[str, str]]:
         if filepath.name == "README.md":
             return issues
         # raw/ 폴더는 frontmatter 불필요
-        if "/raw/" in str(filepath):
+        if "/raw/" in normalized_path:
             return issues
         issues.append({
             "level": "WARNING",

@@ -2,7 +2,7 @@
 
 > LLM과 함께 운영하는 개인 지식 베이스(wiki)를 즉시 시작할 수 있는 starter kit.
 
-Version: 0.2.0
+Version: 0.3.0
 
 Karpathy의 "Obsidian is the IDE; the LLM is the programmer; the wiki is the codebase" 패턴을 누구나 fork/clone해서 바로 적용할 수 있도록 구성한 레포지토리다.
 
@@ -22,19 +22,24 @@ cd ~/wiki-starter
 # 2. wiki 디렉토리 초기화
 bash scripts/init-wiki.sh
 
-# 3. Obsidian에서 ~/wiki 폴더를 vault로 열기
+# 3. 프로젝트에 Agent 지침 템플릿 복사 (필요한 것만)
+cp templates/agents/AGENTS.md /path/to/your-project/AGENTS.md
+cp templates/agents/CLAUDE.md /path/to/your-project/CLAUDE.md
+
+# 4. Obsidian에서 ~/wiki 폴더를 vault로 열기
 #    (Obsidian 앱 → Open folder as vault → ~/wiki 선택)
 
-# 4. frontmatter 검사 실행 (선택)
+# 5. frontmatter 검사 실행 (선택)
 python3 scripts/lint-frontmatter.py ~/wiki
-
-# 5. docs/ 가이드 읽기 → docs/01-concept/01-llm-wiki-pattern.md 부터
 ```
+
+처음이면 [docs/00-start-here.md](./docs/00-start-here.md)부터 읽는다. 이 문서는 무엇이 자동이고 무엇이 수동인지, 첫 도메인 compile을 어떻게 시작하는지까지 안내한다.
 
 ## Agent 연동
 
 | Agent | 시작 문서 | 용도 |
 |-------|----------|------|
+| 공통 원리 | [docs/02-setup/00-mental-model.md](./docs/02-setup/00-mental-model.md) | 자동/수동 경계, `CLAUDE.md`/`AGENTS.md`/wiki 관계 |
 | Claude Code | [docs/02-setup/03-claude-code-integration.md](./docs/02-setup/03-claude-code-integration.md) | Claude Code memory와 wiki 연결 |
 | Codex | [docs/02-setup/05-codex-integration.md](./docs/02-setup/05-codex-integration.md) | `AGENTS.md`와 wiki 컨텍스트 연결 |
 | Claude Code + Codex | [docs/06-advanced/03-dual-agent-workflow.md](./docs/06-advanced/03-dual-agent-workflow.md) | 상호 적대적 리뷰, 병렬 구현, 통합 검수 |
@@ -50,6 +55,7 @@ llm-wiki-starter/
 ├── .gitignore
 │
 ├── docs/
+│   ├── 00-start-here.md # 첫 실행 경로
 │   ├── 01-concept/       # 핵심 개념 학습 (Karpathy 패턴, 7원칙)
 │   ├── 02-setup/         # 초기 설치 가이드
 │   ├── 03-workflow/      # 4단계 파이프라인 (Collect→Compile→View→Ask)
@@ -58,6 +64,7 @@ llm-wiki-starter/
 │   └── 06-advanced/      # MCP, 자동화 (선택)
 │
 ├── templates/
+│   ├── agents/           # AGENTS.md, CLAUDE.md 템플릿
 │   ├── frontmatter/      # 파일 타입별 frontmatter 템플릿
 │   ├── compile/          # 도메인 compile 산출물 7종 템플릿
 │   └── memory-types/     # LLM Memory 4가지 타입 예시

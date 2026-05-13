@@ -8,6 +8,8 @@ status: active
 
 # Claude Code 연동
 
+먼저 자동/수동 경계와 `CLAUDE.md`, `AGENTS.md`, memory, wiki의 역할을 확인한다: [00-mental-model.md](./00-mental-model.md)
+
 ## Claude Code Memory 시스템
 
 Claude Code는 프로젝트별 memory 폴더를 통해 지속적인 컨텍스트를 유지한다.
@@ -115,6 +117,8 @@ touch ~/.claude/projects/YOUR-PROJECT/memory/feedback_no_foo_pattern.md
 ## CLAUDE.md 설정
 
 프로젝트별 `CLAUDE.md`에 wiki 위치를 명시해두면 모든 세션에서 참조 가능하다.
+
+기본 템플릿: [templates/agents/CLAUDE.md](../../templates/agents/CLAUDE.md)
 
 ```markdown
 # CLAUDE.md

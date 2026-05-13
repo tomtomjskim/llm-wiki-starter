@@ -22,7 +22,7 @@ status: active
         └── <your-domain>/  #   도메인당 폴더
 ```
 
-LLM Memory 파일은 Claude Code 기준 `~/.claude/projects/{project}/memory/`에 별도 위치한다. [상세 설명](./03-claude-code-integration.md)
+LLM Memory 파일은 Claude Code 기준 `~/.claude/projects/{project}/memory/`에 별도 위치한다. `CLAUDE.md`, `AGENTS.md`, memory, wiki의 관계는 [00-mental-model.md](./00-mental-model.md)를 먼저 본다.
 
 ## Tier 상세
 

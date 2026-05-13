@@ -26,7 +26,8 @@ status: active
 
 ```yaml
 ---
-title: <domain> - <파일 목적>
+name: <domain>-<page-name>
+description: <domain> 도메인 <파일 목적>
 type: compiled
 domain: <your-domain>
 source_files:
@@ -36,8 +37,11 @@ compiled_at: YYYY-MM-DD
 compiled_by: claude-developer
 confidence: high | medium | low
 status: draft | active
+updated: YYYY-MM-DD
 ---
 ```
+
+상세 표준은 [02-frontmatter-spec.md](./02-frontmatter-spec.md)와 [templates/frontmatter/compiled.md](../../templates/frontmatter/compiled.md)를 따른다.
 
 ## INPUT 사전 준비
 

@@ -14,6 +14,8 @@ LLM이 `raw/` 또는 코드베이스를 읽고 구조화된 `compiled/` markdown
 
 인간의 역할: LLM에 **무엇을 읽을지**와 **어디에 출력할지**를 지시하는 것뿐.
 
+처음이라면 실습 문서부터 진행: [00-first-compile-walkthrough.md](./00-first-compile-walkthrough.md)
+
 ## 4슬롯 프롬프트 패턴
 
 검증된 Compile 프롬프트 구조. 4개 슬롯으로 구성된다.
@@ -43,6 +45,7 @@ LLM이 따라야 할 제약 조건.
 - 추측 금지. 코드에서 확인 불가한 내용은 "확인 필요"로 표시
 - 각 파일 200줄 이하 (초과 시 자연스럽게 분할)
 - 모든 파일에 frontmatter 필수 (name, description, type: compiled, updated, confidence)
+- frontmatter는 `templates/frontmatter/compiled.md`와 [docs/04-patterns/02-frontmatter-spec.md](../04-patterns/02-frontmatter-spec.md)를 따른다.
 - DB 스키마는 실제 DESCRIBE/SHOW COLUMNS로 검증
 - 코드 수정 금지 — 읽기와 문서화만
 

@@ -70,6 +70,8 @@ python3 scripts/lint-frontmatter.py ~/wiki --error-only
 
 `README.md` 중 frontmatter가 없는 파일은 안내 문서로 보고 검사 대상에서 제외한다.
 
+`templates/agents/`의 `AGENTS.md`, `CLAUDE.md`는 실제 프로젝트에 복사되는 지침 템플릿이므로 wiki frontmatter 검사에서 제외한다.
+
 ### 종료 코드
 
 - `0`: ERROR 0건 (정상)

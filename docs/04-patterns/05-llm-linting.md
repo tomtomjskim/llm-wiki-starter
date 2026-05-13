@@ -26,8 +26,8 @@ wiki가 커지면 자연스럽게 발생하는 문제:
 어떤 파일에서도 참조되지 않는 파일.
 
 ```bash
-# 개념: 모든 파일의 [[링크]]를 추출 → 없는 파일 목록
-python3 scripts/lint-frontmatter.py ~/wiki/compiled --check orphan
+# 현재는 개념 단계. 자동 orphan 검사는 향후 wiki-doctor 스크립트에서 제공 예정.
+# 지금은 LLM에게 compiled 폴더를 읽게 해서 orphan 후보를 찾도록 요청한다.
 ```
 
 **처리 방법:**
@@ -119,7 +119,7 @@ INFO: 참고용
 
 **Phase 1 (지금):** `lint-frontmatter.py`로 필수 필드만 검사.
 
-**Phase 2:** orphan + broken refs 스크립트 추가.
+**Phase 2:** `wiki-doctor.py`로 orphan + broken refs 스크립트 추가.
 
 **Phase 3:** `updated` 날짜 기반 stale 자동 감지 + 갱신 제안.
 

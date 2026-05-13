@@ -103,4 +103,6 @@ brew install python3
 
 ## 다음
 
+자동/수동 경계 이해: [00-mental-model.md](./00-mental-model.md)
+
 디렉토리 구조 이해: [02-directory-layout.md](./02-directory-layout.md)

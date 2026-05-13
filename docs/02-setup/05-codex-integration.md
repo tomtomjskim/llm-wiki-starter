@@ -8,6 +8,8 @@ status: active
 
 # Codex 연동
 
+먼저 자동/수동 경계와 `CLAUDE.md`, `AGENTS.md`, memory, wiki의 역할을 확인한다: [00-mental-model.md](./00-mental-model.md)
+
 ## 목적
 
 Codex에서 이 wiki를 쓰는 목표는 두 가지다.
@@ -38,6 +40,8 @@ wiki는 프로젝트 바깥에 두고, 프로젝트 루트의 `AGENTS.md`에서 
 
 프로젝트 루트에 다음 블록을 추가한다.
 
+기본 템플릿: [templates/agents/AGENTS.md](../../templates/agents/AGENTS.md)
+
 ```markdown
 ## LLM Wiki
 
@@ -45,7 +49,7 @@ wiki는 프로젝트 바깥에 두고, 프로젝트 루트의 `AGENTS.md`에서 
 - Codebase wiki: `~/wiki/compiled/codebase`
 - Before changing a domain, inspect the matching wiki folder when it exists.
 - Treat wiki pages as context, not authority. If code and wiki conflict, trust code and update the wiki.
-- After discovering missing or stale knowledge, update the relevant `known-issues.md` or mark the page `status: needs-update`.
+- After discovering missing or stale knowledge, report the wiki update needed. In dual-agent workflows, update compiled wiki after implementation and review are complete.
 
 ## Domain Map
 

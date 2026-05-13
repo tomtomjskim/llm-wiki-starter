@@ -8,6 +8,17 @@ status: active
 
 # Changelog
 
+## 0.3.0 - 2026-05-13
+
+- 처음 사용하는 사람을 위한 `docs/00-start-here.md` 추가.
+- 자동/수동 경계와 `CLAUDE.md`, `AGENTS.md`, wiki, memory, Skill 관계를 설명하는 mental model 문서 추가.
+- 첫 코드베이스 도메인 compile walkthrough 추가.
+- `templates/agents/AGENTS.md`, `templates/agents/CLAUDE.md` 추가.
+- README Quick Start를 Agent 지침 템플릿 사용 흐름에 맞게 정리.
+- agent 지침 템플릿은 실제 프로젝트 복사용 파일이므로 frontmatter lint 대상에서 제외.
+- codebase compile frontmatter 예시를 실제 linter 규칙과 일치하도록 수정.
+- 아직 구현되지 않은 orphan check 명령 예시를 future work 설명으로 정정.
+
 ## 0.2.0 - 2026-05-13
 
 - Codex에서 wiki를 컨텍스트와 작업 규칙으로 활용하는 가이드 추가.
