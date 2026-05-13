@@ -104,6 +104,17 @@ git add compiled/codebase/orders/
 git commit -m "resolve: orders compile 최신본 선택"
 ```
 
+## 여러 Agent가 동시에 작업할 때
+
+Claude Code와 Codex를 동시에 쓰는 경우 충돌은 기기보다 작업 소유권에서 더 자주 생긴다.
+
+- 구현자는 파일을 수정하고, 리뷰어는 먼저 리뷰만 작성한다.
+- 병렬 구현은 파일 소유권을 먼저 나눈 뒤 시작한다.
+- `compiled/` wiki 업데이트는 구현과 리뷰가 끝난 뒤 통합자가 한 번만 수행한다.
+- 같은 파일을 두 Agent가 동시에 고쳤다면 자동 병합을 믿지 말고 diff를 사람이 읽는다.
+
+상세 운영 패턴: [docs/06-advanced/03-dual-agent-workflow.md](../06-advanced/03-dual-agent-workflow.md)
+
 ## Obsidian Sync의 충돌 처리
 
 Obsidian Sync는 자동으로 충돌을 처리한다. 충돌 발생 시:

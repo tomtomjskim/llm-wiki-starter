@@ -68,6 +68,8 @@ python3 scripts/lint-frontmatter.py ~/wiki --error-only
 | INFO | `updated` 필드 없음 (`--verbose` 시에만) |
 | INFO | `status: deprecated` 파일 (`--verbose` 시에만) |
 
+`README.md` 중 frontmatter가 없는 파일은 안내 문서로 보고 검사 대상에서 제외한다.
+
 ### 종료 코드
 
 - `0`: ERROR 0건 (정상)

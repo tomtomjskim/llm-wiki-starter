@@ -28,7 +28,7 @@ updated: YYYY-MM-DD          # 필수, 마지막 수정일
 # 필수
 name: kebab-case-slug
 description: 한 줄 요약
-type: compiled | learn | decision | rule | pattern | guide | index | meta | project
+type: compiled | learn | decision | journal | rule | pattern | guide | index | meta | project
 updated: YYYY-MM-DD
 
 # 권장
@@ -58,6 +58,7 @@ source: url | file-path | session-id
 | `compiled` | LLM이 코드/raw를 읽고 생성한 wiki | `overview.md`, `domain-rules.md` |
 | `learn` | 개인 학습 노트 | `karpathy-llm-wiki-pattern.md` |
 | `decision` | 기술/아키텍처 결정 기록 | `2026-05-chose-git-sync.md` |
+| `journal` | 일일 진행 메모 | `2026-05-13.md` |
 | `rule` | 코딩·작업 규칙 | `no-inline-sql.md` |
 | `pattern` | 코드/작업 패턴 | `api-response-format.md` |
 | `guide` | 가이드라인 (이 파일처럼) | `frontmatter-spec.md` |
@@ -104,6 +105,7 @@ Claude Code memory 시스템에서 자동 로드 우선순위를 결정한다.
 - `description` 필드 없음 → ERROR
 - `type` 필드 없음 → ERROR
 - `updated` 누락 또는 90일 초과 → WARNING (stale)
+- 템플릿의 `updated: YYYY-MM-DD` placeholder → 검사 제외
 - `confidence: low` + 30일 초과 → WARNING
 - `status: deprecated` → INFO (정리 후보)
 

@@ -1,12 +1,11 @@
 ---
 name: feedback-example-no-foo-pattern
 description: foo 패턴을 사용하지 말 것 — 예시 피드백 메모리
-metadata:
-  type: rule
-  updated: 2026-05-13
-  confidence: high
-  status: active
-  llm_priority: medium
+type: rule
+updated: 2026-05-13
+confidence: high
+status: active
+llm_priority: medium
 ---
 
 # foo 패턴 사용 금지

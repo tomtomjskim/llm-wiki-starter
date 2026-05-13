@@ -2,13 +2,15 @@
 
 > LLM과 함께 운영하는 개인 지식 베이스(wiki)를 즉시 시작할 수 있는 starter kit.
 
+Version: 0.2.0
+
 Karpathy의 "Obsidian is the IDE; the LLM is the programmer; the wiki is the codebase" 패턴을 누구나 fork/clone해서 바로 적용할 수 있도록 구성한 레포지토리다.
 
 ## 누구를 위한 것인가
 
 - 개인 지식 관리(PKM)에 LLM을 적극 활용하고 싶은 개발자
 - 코드베이스를 LLM-friendly wiki로 문서화하고 싶은 팀
-- Obsidian + Claude Code 조합으로 지식 시스템을 구축하려는 사람
+- Obsidian + Claude Code 또는 Codex 조합으로 지식 시스템을 구축하려는 사람
 
 ## Quick Start (5단계)
 
@@ -29,11 +31,21 @@ python3 scripts/lint-frontmatter.py ~/wiki
 # 5. docs/ 가이드 읽기 → docs/01-concept/01-llm-wiki-pattern.md 부터
 ```
 
+## Agent 연동
+
+| Agent | 시작 문서 | 용도 |
+|-------|----------|------|
+| Claude Code | [docs/02-setup/03-claude-code-integration.md](./docs/02-setup/03-claude-code-integration.md) | Claude Code memory와 wiki 연결 |
+| Codex | [docs/02-setup/05-codex-integration.md](./docs/02-setup/05-codex-integration.md) | `AGENTS.md`와 wiki 컨텍스트 연결 |
+| Claude Code + Codex | [docs/06-advanced/03-dual-agent-workflow.md](./docs/06-advanced/03-dual-agent-workflow.md) | 상호 적대적 리뷰, 병렬 구현, 통합 검수 |
+
 ## 디렉토리 트리
 
 ```
 llm-wiki-starter/
 ├── README.md
+├── VERSION
+├── CHANGELOG.md
 ├── LICENSE
 ├── .gitignore
 │

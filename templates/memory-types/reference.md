@@ -1,12 +1,11 @@
 ---
 name: reference-api-response-format
 description: API 응답 형식 표준 — 예시 reference 메모리
-metadata:
-  type: pattern
-  updated: 2026-05-13
-  confidence: high
-  status: active
-  llm_priority: high
+type: pattern
+updated: 2026-05-13
+confidence: high
+status: active
+llm_priority: high
 ---
 
 # API 응답 형식 표준

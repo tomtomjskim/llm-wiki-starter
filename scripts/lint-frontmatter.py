@@ -19,6 +19,7 @@ import re
 import argparse
 from pathlib import Path
 from datetime import datetime, date
+from typing import Dict, List, Optional
 
 
 REQUIRED_FIELDS = ["name", "description", "type"]
@@ -27,11 +28,13 @@ CONFIDENCE_LOW_THRESHOLD_DAYS = 30
 
 VALID_TYPES = {
     "compiled", "learn", "decision", "rule", "pattern",
-    "guide", "index", "meta", "project"
+    "guide", "index", "meta", "project", "journal"
 }
 
+DATE_PLACEHOLDERS = {"YYYY-MM-DD", "<YYYY-MM-DD>"}
 
-def extract_frontmatter(content: str) -> dict | None:
+
+def extract_frontmatter(content: str) -> Optional[Dict[str, str]]:
     """YAML frontmatter 블록을 파싱해서 딕셔너리로 반환. 없으면 None."""
     lines = content.splitlines()
     if not lines or lines[0].strip() != "---":
@@ -57,14 +60,14 @@ def extract_frontmatter(content: str) -> dict | None:
         match = re.match(r'^(\w+):\s*(.*)', line)
         if match:
             key = match.group(1)
-            value = match.group(2).strip().strip('"').strip("'")
+            value = re.split(r'\s+#', match.group(2), maxsplit=1)[0].strip().strip('"').strip("'")
             if value and not value.startswith("#"):
                 result[key] = value
 
     return result
 
 
-def check_file(filepath: Path, verbose: bool = False) -> list[dict]:
+def check_file(filepath: Path, verbose: bool = False) -> List[Dict[str, str]]:
     """파일 하나를 검사해서 이슈 목록을 반환."""
     issues = []
 
@@ -80,6 +83,8 @@ def check_file(filepath: Path, verbose: bool = False) -> list[dict]:
 
     # frontmatter 없는 파일
     if not content.startswith("---"):
+        if filepath.name == "README.md":
+            return issues
         # raw/ 폴더는 frontmatter 불필요
         if "/raw/" in str(filepath):
             return issues
@@ -118,6 +123,9 @@ def check_file(filepath: Path, verbose: bool = False) -> list[dict]:
 
     # updated 날짜 검사
     if "updated" in fm and fm["updated"]:
+        if fm["updated"] in DATE_PLACEHOLDERS:
+            return issues
+
         try:
             updated_date = datetime.strptime(fm["updated"], "%Y-%m-%d").date()
             delta = (date.today() - updated_date).days
@@ -161,7 +169,7 @@ def check_file(filepath: Path, verbose: bool = False) -> list[dict]:
     return issues
 
 
-def lint_directory(root: Path, verbose: bool = False, error_only: bool = False) -> list[dict]:
+def lint_directory(root: Path, verbose: bool = False, error_only: bool = False) -> List[Dict[str, str]]:
     """디렉토리 내 모든 .md 파일을 재귀적으로 검사."""
     all_issues = []
 

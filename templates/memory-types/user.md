@@ -1,12 +1,11 @@
 ---
 name: user-preference-diagram-theme
 description: 다이어그램 기본 테마 설정 — 예시 사용자 선호 메모리
-metadata:
-  type: rule
-  updated: 2026-05-13
-  confidence: high
-  status: active
-  llm_priority: medium
+type: rule
+updated: 2026-05-13
+confidence: high
+status: active
+llm_priority: medium
 ---
 
 # 다이어그램 기본 테마: 화이트

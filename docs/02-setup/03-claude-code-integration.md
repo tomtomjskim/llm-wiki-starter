@@ -66,13 +66,14 @@ MEMORY.md                # 대문자: 인덱스 파일
 ---
 name: kebab-case-slug
 description: 한 줄 요약
-metadata:
-  type: rule | pattern | decision | guide | project | meta
-  updated: YYYY-MM-DD
-  confidence: high | medium | low
-  status: active | deprecated | draft
+type: rule | pattern | decision | guide | project | meta
+updated: YYYY-MM-DD
+confidence: high | medium | low
+status: active | deprecated | draft
 ---
 ```
+
+이 starter kit의 linter는 top-level `type`, `updated`, `confidence`, `status` 필드를 기준으로 검사한다. Claude Code memory 파일도 같은 형식을 사용한다.
 
 상세: [docs/04-patterns/02-frontmatter-spec.md](../04-patterns/02-frontmatter-spec.md)
 
@@ -134,3 +135,7 @@ touch ~/.claude/projects/YOUR-PROJECT/memory/feedback_no_foo_pattern.md
 ## 다음
 
 Obsidian vault 설정: [04-obsidian-vault-setup.md](./04-obsidian-vault-setup.md)
+
+Codex 연동이 필요하면: [05-codex-integration.md](./05-codex-integration.md)
+
+Claude Code와 Codex를 함께 써서 상호 리뷰·병렬 구현을 운영하려면: [docs/06-advanced/03-dual-agent-workflow.md](../06-advanced/03-dual-agent-workflow.md)

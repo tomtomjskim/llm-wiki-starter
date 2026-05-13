@@ -1,12 +1,11 @@
 ---
 name: project-orders-architecture
 description: Orders 도메인 아키텍처 현황 스냅샷 — 예시 프로젝트 메모리
-metadata:
-  type: project
-  updated: 2026-05-13
-  confidence: high
-  status: active
-  domain: orders
+type: project
+updated: 2026-05-13
+confidence: high
+status: active
+domain: orders
 ---
 
 # Orders 도메인 아키텍처

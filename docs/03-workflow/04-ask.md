@@ -28,6 +28,21 @@ wiki 전체 또는 관련 부분을 LLM 컨텍스트에 올려 질문한다. RAG
 /add ~/wiki/compiled/codebase/users/
 ```
 
+### Codex에서 경로를 직접 지정
+
+Codex에서는 작업 요청에 wiki 경로와 기대 동작을 함께 적는다.
+
+```
+~/wiki/compiled/codebase/orders/ 를 먼저 읽고
+주문 취소 로직 변경의 영향 범위를 정리한 뒤 수정해줘.
+코드와 wiki가 충돌하면 코드를 기준으로 보고,
+wiki 업데이트가 필요한 파일도 마지막에 알려줘.
+```
+
+프로젝트 루트의 `AGENTS.md`에 wiki root와 도메인 맵을 적어두면 매번 긴 경로를 설명하지 않아도 된다.
+
+상세: [docs/02-setup/05-codex-integration.md](../02-setup/05-codex-integration.md)
+
 ### 프롬프트에 직접 경로 언급
 
 ```

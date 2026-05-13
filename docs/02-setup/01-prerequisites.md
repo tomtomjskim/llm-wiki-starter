@@ -22,18 +22,21 @@ wiki를 탐색하고 편집하는 주 인터페이스. 무료.
 brew install --cask obsidian
 ```
 
-### 2. Claude Code (또는 다른 LLM CLI)
+### 2. LLM Agent CLI
 
 wiki compile 및 관리를 수행하는 LLM Agent.
 
-- 설치: [https://claude.ai/code](https://claude.ai/code)
-- npm 설치:
+Claude Code, Codex, 또는 둘 다 사용할 수 있다. 둘을 함께 쓰는 경우 한쪽은 구현자, 다른 한쪽은 리뷰어/검수자로 역할을 나누는 구성이 권장된다.
+
+Claude Code 설치:
 
 ```bash
 npm install -g @anthropic-ai/claude-code
 ```
 
-- 이 starter kit는 Claude Code 기준으로 작성되었지만, **다른 LLM CLI (ChatGPT, Gemini CLI 등)도 사용 가능**하다. 프롬프트 패턴은 동일하게 적용된다.
+- Claude Code 연동: [03-claude-code-integration.md](./03-claude-code-integration.md)
+- Codex 연동: [05-codex-integration.md](./05-codex-integration.md)
+- 병행 운영: [docs/06-advanced/03-dual-agent-workflow.md](../06-advanced/03-dual-agent-workflow.md)
 
 ### 3. Git
 
@@ -92,7 +95,7 @@ brew install python3
 
 ```
 [ ] Obsidian 설치 완료
-[ ] Claude Code 설치 완료 (claude --version 확인)
+[ ] Claude Code 또는 Codex 사용 환경 준비 완료
 [ ] Git 설치 완료 (git --version 확인)
 [ ] Python 3 설치 완료 (python3 --version 확인)
 [ ] scripts/init-wiki.sh 실행 완료 (~/wiki/ 디렉토리 생성)
