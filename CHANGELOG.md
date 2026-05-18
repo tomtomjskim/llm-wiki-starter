@@ -8,6 +8,18 @@ status: active
 
 # Changelog
 
+## Unreleased
+
+- `docs/05-sync/05-git-primary-architecture.md` 추가: GitHub private primary,
+  개인/팀 서버 mirror, Wiki Web, LLM indexer, Agent runner, 백업/복구까지
+  포함한 운영형 Git 기반 LLM Wiki 아키텍처.
+- `docs/04-patterns/06-environment-profile.md` 추가: 개인 노트북, 회사 장비,
+  OCI/VPS 서버 등 개발환경을 안전하게 수집하고 지식화하는 패턴.
+- `templates/memory-types/environment.md` 추가: 환경 프로필 템플릿.
+- `templates/memory-types/repo-boundary.md` 추가: repo 권한 경계와 Agent 접근
+  정책 템플릿.
+- Git 기반 동기화 문서와 README에서 운영형 Git primary architecture로 연결.
+
 ## 0.3.0 - 2026-05-13
 
 - 처음 사용하는 사람을 위한 `docs/00-start-here.md` 추가.

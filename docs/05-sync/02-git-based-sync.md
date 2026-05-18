@@ -130,3 +130,6 @@ personal/
 ## 다음
 
 동기화 충돌 처리: [04-conflict-resolution.md](./04-conflict-resolution.md)
+
+여러 단말, 서버 mirror, Agent runner까지 포함한 운영형 구조:
+[05-git-primary-architecture.md](./05-git-primary-architecture.md)
