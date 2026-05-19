@@ -43,6 +43,7 @@ python3 scripts/lint-frontmatter.py ~/wiki
 | Claude Code | [docs/02-setup/03-claude-code-integration.md](./docs/02-setup/03-claude-code-integration.md) | Claude Code memory와 wiki 연결 |
 | Codex | [docs/02-setup/05-codex-integration.md](./docs/02-setup/05-codex-integration.md) | `AGENTS.md`와 wiki 컨텍스트 연결 |
 | Claude Code + Codex | [docs/06-advanced/03-dual-agent-workflow.md](./docs/06-advanced/03-dual-agent-workflow.md) | 상호 적대적 리뷰, 병렬 구현, 통합 검수 |
+| Git primary architecture | [docs/05-sync/05-git-primary-architecture.md](./docs/05-sync/05-git-primary-architecture.md) | GitHub private primary, 서버 mirror, Agent update policy |
 
 ## 디렉토리 트리
 
@@ -60,7 +61,7 @@ llm-wiki-starter/
 │   ├── 02-setup/         # 초기 설치 가이드
 │   ├── 03-workflow/      # 4단계 파이프라인 (Collect→Compile→View→Ask)
 │   ├── 04-patterns/      # 검증된 실전 패턴
-│   ├── 05-sync/          # 멀티 디바이스 동기화
+│   ├── 05-sync/          # 멀티 디바이스 동기화와 Git primary architecture
 │   └── 06-advanced/      # MCP, 자동화 (선택)
 │
 ├── templates/
