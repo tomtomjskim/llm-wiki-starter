@@ -10,6 +10,12 @@ status: active
 
 ## Unreleased
 
+- `docs/06-advanced/04-ai-ops-hermes-workflow.md` 추가: 여러 wiki/project
+  repo를 중앙 Hermes 또는 AI Ops workspace로 pull/check/report 하는 고급
+  운영 방식, 샘플 작업, write policy, skill 승격 기준을 정리.
+- `docs/06-advanced/02-automation.md`에 중앙 Agent 운영 서버와 연결하는
+  선택 흐름 추가.
+- README와 Start Here에서 AI Ops + Hermes 운영 문서로 연결.
 - `docs/05-sync/05-git-primary-architecture.md` 추가: GitHub private primary,
   개인/팀 서버 mirror, Wiki Web, LLM indexer, Agent runner, 백업/복구까지
   포함한 운영형 Git 기반 LLM Wiki 아키텍처.

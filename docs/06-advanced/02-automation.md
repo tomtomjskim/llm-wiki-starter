@@ -2,7 +2,7 @@
 name: automation
 description: wiki 자동 lint, compile dry-run 등 자동화 패턴
 type: guide
-updated: 2026-05-13
+updated: 2026-05-20
 status: active
 ---
 
@@ -121,6 +121,36 @@ jobs:
 3. **1달 후:** stale 감지 스크립트 추가
 4. **필요 시:** Git hook으로 커밋 전 자동 검사
 5. **팀 사용 시:** GitHub Actions 연동
+
+## 중앙 Agent 운영 서버와 연결
+
+개인 wiki나 프로젝트 wiki가 여러 개로 늘어나면 repo마다 자동화를 따로 설치하기보다 중앙 운영 repo와 Agent runner를 두는 방식이 더 단순할 수 있다.
+
+권장 분리:
+
+```text
+llm-wiki-starter = wiki 구조, 템플릿, frontmatter lint
+wiki repo = 개인/프로젝트 지식 원본
+ai-ops workspace = source registry, schedule, 권한 정책, report
+Hermes 또는 Agent runner = pull/check/report 실행
+```
+
+이 방식은 starter의 기본 사용법이 아니라 고급 운영 방식이다. 처음에는 이 문서의 수동 lint와 cron부터 시작하고, 여러 repo를 관리해야 할 때 [04-ai-ops-hermes-workflow.md](./04-ai-ops-hermes-workflow.md)를 검토한다.
+
+초기 권장 자동화:
+
+- enabled wiki repo pull 가능 여부 확인
+- frontmatter lint report 생성
+- stale 문서 후보 report 생성
+- generated 문서 promotion 후보 report 생성
+
+초기 금지 자동화:
+
+- 검토 없는 canonical 반영
+- secret이 포함된 raw log 인덱싱
+- production 서버 write
+- DB write
+- deploy 실행
 
 ## 주의
 

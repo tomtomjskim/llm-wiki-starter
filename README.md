@@ -44,6 +44,7 @@ python3 scripts/lint-frontmatter.py ~/wiki
 | Codex | [docs/02-setup/05-codex-integration.md](./docs/02-setup/05-codex-integration.md) | `AGENTS.md`와 wiki 컨텍스트 연결 |
 | Claude Code + Codex | [docs/06-advanced/03-dual-agent-workflow.md](./docs/06-advanced/03-dual-agent-workflow.md) | 상호 적대적 리뷰, 병렬 구현, 통합 검수 |
 | Git primary architecture | [docs/05-sync/05-git-primary-architecture.md](./docs/05-sync/05-git-primary-architecture.md) | GitHub private primary, 서버 mirror, Agent update policy |
+| AI Ops + Hermes | [docs/06-advanced/04-ai-ops-hermes-workflow.md](./docs/06-advanced/04-ai-ops-hermes-workflow.md) | 여러 wiki/project repo를 중앙 Hermes로 점검하고 report하는 선택 운영 방식 |
 
 ## 디렉토리 트리
 

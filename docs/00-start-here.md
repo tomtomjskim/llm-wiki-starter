@@ -2,7 +2,7 @@
 name: start-here
 description: LLM Wiki Starter를 처음 사용하는 사용자를 위한 최소 실행 경로
 type: guide
-updated: 2026-05-13
+updated: 2026-05-20
 status: active
 ---
 
@@ -177,3 +177,4 @@ wiki까지 바로 반영할 때:
 - Claude Code 연동: [docs/02-setup/03-claude-code-integration.md](./02-setup/03-claude-code-integration.md)
 - Codex 연동: [docs/02-setup/05-codex-integration.md](./02-setup/05-codex-integration.md)
 - Claude Code + Codex 병행 운영: [docs/06-advanced/03-dual-agent-workflow.md](./06-advanced/03-dual-agent-workflow.md)
+- 여러 wiki/project repo를 Hermes로 통합 관리: [docs/06-advanced/04-ai-ops-hermes-workflow.md](./06-advanced/04-ai-ops-hermes-workflow.md)
