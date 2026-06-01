@@ -2,7 +2,7 @@
 name: start-here
 description: LLM Wiki Starter를 처음 사용하는 사용자를 위한 최소 실행 경로
 type: guide
-updated: 2026-05-20
+updated: 2026-06-01
 status: active
 ---
 
@@ -32,6 +32,18 @@ status: active
 - wiki 기반 문서화가 필요할 때만 이 starter kit를 clone하고 `scripts/init-wiki.sh`를 실행한다.
 
 상세 원리: [docs/02-setup/00-mental-model.md](./02-setup/00-mental-model.md)
+
+## 0.5. 시작 profile 고르기
+
+처음부터 모든 기능을 쓸 필요는 없다. 목적에 맞는 profile 하나로 시작한다.
+
+| Profile | 시작점 | 선택 기준 |
+|---|---|---|
+| Codebase Wiki | 이 문서의 1-7단계 | 코드베이스 도메인을 LLM-friendly wiki로 만들고 싶다 |
+| SecondBrain | [SecondBrain Profile](./02-setup/06-second-brain-profile.md) | Obsidian vault 하나에 `notes/`, `sources/`, `Home.md`를 두고 개인 자료를 연결하고 싶다 |
+| Advanced Ops | [AI Ops + Hermes](./06-advanced/04-ai-ops-hermes-workflow.md) | 여러 wiki/project repo를 중앙 서버에서 점검하고 요약하고 싶다 |
+
+개인 일기, 취업, 프로젝트, Notion/email/PDF 원본을 한 vault에 넣고 싶다면 Codebase Wiki 단계를 건너뛰고 SecondBrain profile부터 시작해도 된다.
 
 ## 1. wiki 폴더 만들기
 
@@ -173,6 +185,9 @@ wiki까지 바로 반영할 때:
 ## 다음
 
 - 디렉토리 원리: [docs/02-setup/02-directory-layout.md](./02-setup/02-directory-layout.md)
+- 개인 SecondBrain profile: [docs/02-setup/06-second-brain-profile.md](./02-setup/06-second-brain-profile.md)
+- SecondBrain 단계별 전환: [docs/03-workflow/05-second-brain-migration.md](./03-workflow/05-second-brain-migration.md)
+- Inter-cluster association: [docs/04-patterns/07-inter-cluster-association.md](./04-patterns/07-inter-cluster-association.md)
 - Obsidian 설정: [docs/02-setup/04-obsidian-vault-setup.md](./02-setup/04-obsidian-vault-setup.md)
 - Claude Code 연동: [docs/02-setup/03-claude-code-integration.md](./02-setup/03-claude-code-integration.md)
 - Codex 연동: [docs/02-setup/05-codex-integration.md](./02-setup/05-codex-integration.md)

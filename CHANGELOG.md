@@ -10,6 +10,21 @@ status: active
 
 ## Unreleased
 
+## 0.4.0 - 2026-06-01
+
+- `docs/02-setup/06-second-brain-profile.md` 추가: Obsidian vault 하나를
+  `Home.md`, `notes/`, `sources/`, `meta/graph` 구조로 운영하는 개인
+  SecondBrain profile 정리.
+- `docs/03-workflow/05-second-brain-migration.md` 추가: v0 Capture부터 v5
+  Emergence까지 사용자가 원하는 성숙도에서 시작할 수 있는 단계별 전환 계획
+  추가.
+- `docs/04-patterns/07-inter-cluster-association.md` 추가: 서로 다른 지식
+  클러스터를 bridge note로 연결해 창발성을 높이는 패턴, graph signal, LLM
+  prompt 정리.
+- README에 Codebase Wiki, SecondBrain, Advanced Ops 시작 profile 표 추가.
+- Start Here, directory layout, Obsidian setup, View, frontmatter spec에서
+  SecondBrain profile과 graph/bridge note 문서로 연결.
+
 - `docs/06-advanced/04-ai-ops-hermes-workflow.md` 추가: 여러 wiki/project
   repo를 중앙 Hermes 또는 AI Ops workspace로 pull/check/report 하는 고급
   운영 방식, 샘플 작업, write policy, skill 승격 기준을 정리.

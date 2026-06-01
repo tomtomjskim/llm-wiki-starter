@@ -2,7 +2,7 @@
 name: directory-layout
 description: T1/T2/T3 3-tier wiki 디렉토리 구조 설명과 각 tier 사용 시점
 type: guide
-updated: 2026-05-13
+updated: 2026-06-01
 status: active
 ---
 
@@ -23,6 +23,36 @@ status: active
 ```
 
 LLM Memory 파일은 Claude Code 기준 `~/.claude/projects/{project}/memory/`에 별도 위치한다. `CLAUDE.md`, `AGENTS.md`, memory, wiki의 관계는 [00-mental-model.md](./00-mental-model.md)를 먼저 본다.
+
+## 선택: SecondBrain Profile
+
+개인 지식 관리가 주 목적이면 `raw/personal/compiled` 대신 다음 구조로 시작할 수 있다.
+
+```text
+~/SecondBrain/
+├── Home.md
+├── notes/
+│   ├── journal/
+│   ├── career/
+│   ├── projects/
+│   ├── learning/
+│   ├── decisions/
+│   └── bridges/
+├── sources/
+│   ├── notion/
+│   ├── email/
+│   ├── github/
+│   ├── gachon/
+│   └── pdfs/
+├── meta/
+│   ├── templates/
+│   └── graph/
+└── assets/
+```
+
+이 profile에서는 `sources/`가 T1 raw 역할을 하고, `notes/`가 T2 personal 역할을 한다. `notes/bridges/`는 서로 다른 지식 클러스터를 잇는 inter-cluster association 전용 공간이다.
+
+상세: [06-second-brain-profile.md](./06-second-brain-profile.md)
 
 ## Tier 상세
 

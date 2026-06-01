@@ -2,7 +2,7 @@
 name: obsidian-vault-setup
 description: Obsidian vault 위치 설정, 권장 플러그인, 초기 구성 가이드
 type: guide
-updated: 2026-05-13
+updated: 2026-06-01
 status: active
 ---
 
@@ -20,6 +20,8 @@ bash scripts/init-wiki.sh
 ```
 
 하나의 vault에 `raw/`, `personal/`, `compiled/` 모두 포함시키는 것이 권장 구성이다. 그래프 뷰에서 전체 연결을 한눈에 볼 수 있고, 검색도 단일 vault에서 이루어진다.
+
+개인 SecondBrain profile을 쓰는 경우에는 `~/SecondBrain/` 같은 별도 vault에 `Home.md`, `notes/`, `sources/`를 둔다. 자세한 구조는 [SecondBrain Profile](./06-second-brain-profile.md)을 본다.
 
 ## 핵심 설정
 
@@ -108,7 +110,14 @@ wiki/
 
 **필터 팁:**
 - `path:compiled/` — compiled 페이지만 표시
+- `path:notes/` — SecondBrain 해석 노트만 표시
+- `path:notes/bridges/` — bridge note만 표시
+- `path:sources/` — source 원본 연결 상태 확인
 - `tag:#active` — 활성 페이지만 표시
+
+Graph view는 시각적 장식보다 구조 점검 도구로 쓴다. Home에 모든 노드가 직접 붙어 있거나, `sources/` 원본이 해석 없이 중심 노드가 되면 구조를 다시 나눈다.
+
+연결 패턴: [Inter-Cluster Association](../04-patterns/07-inter-cluster-association.md)
 
 ## 모바일 설정 (선택)
 

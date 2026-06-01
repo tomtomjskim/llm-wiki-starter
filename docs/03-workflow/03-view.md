@@ -2,7 +2,7 @@
 name: view
 description: 4단계 파이프라인 3단계 — Obsidian 그래프/검색/MOC 활용법
 type: guide
-updated: 2026-05-13
+updated: 2026-06-01
 status: active
 ---
 
@@ -31,6 +31,19 @@ path:compiled/codebase/orders  — orders 도메인만 표시
 **링크 깊이 조정:**
 - Depth 1: 선택 파일과 직접 연결된 파일만
 - Depth 2-3: 간접 연결까지 — 도메인 간 의존성 파악에 유용
+
+### SecondBrain graph
+
+SecondBrain profile에서는 그래프 뷰를 inter-cluster association 점검에 사용한다.
+
+확인할 것:
+
+- Home이 입구 역할만 하고 모든 노드의 중심이 되지 않는가
+- `notes/bridges/` 노트가 서로 다른 cluster hub를 실제로 잇는가
+- `sources/` 원본이 해석 없이 지식 중심이 되지 않는가
+- `career`, `projects`, `learning`, `journal` 같은 cluster 사이에 새로운 질문이 생기는가
+
+자세한 패턴: [Inter-Cluster Association](../04-patterns/07-inter-cluster-association.md)
 
 ## 전문 검색
 
@@ -113,3 +126,5 @@ where type = "compiled"
 ## 다음
 
 Ask 단계: [04-ask.md](./04-ask.md)
+
+SecondBrain 단계별 도입: [05-second-brain-migration.md](./05-second-brain-migration.md)

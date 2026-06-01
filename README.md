@@ -2,7 +2,7 @@
 
 > LLM과 함께 운영하는 개인 지식 베이스(wiki)를 즉시 시작할 수 있는 starter kit.
 
-Version: 0.3.0
+Version: 0.4.0
 
 Karpathy의 "Obsidian is the IDE; the LLM is the programmer; the wiki is the codebase" 패턴을 누구나 fork/clone해서 바로 적용할 수 있도록 구성한 레포지토리다.
 
@@ -35,6 +35,8 @@ python3 scripts/lint-frontmatter.py ~/wiki
 
 처음이면 [docs/00-start-here.md](./docs/00-start-here.md)부터 읽는다. 이 문서는 무엇이 자동이고 무엇이 수동인지, 첫 도메인 compile을 어떻게 시작하는지까지 안내한다.
 
+개인 SecondBrain을 먼저 만들고 싶다면 [docs/02-setup/06-second-brain-profile.md](./docs/02-setup/06-second-brain-profile.md)에서 `Home.md`, `notes/`, `sources/` 기반 profile로 시작할 수 있다.
+
 ## Agent 연동
 
 | Agent | 시작 문서 | 용도 |
@@ -45,6 +47,14 @@ python3 scripts/lint-frontmatter.py ~/wiki
 | Claude Code + Codex | [docs/06-advanced/03-dual-agent-workflow.md](./docs/06-advanced/03-dual-agent-workflow.md) | 상호 적대적 리뷰, 병렬 구현, 통합 검수 |
 | Git primary architecture | [docs/05-sync/05-git-primary-architecture.md](./docs/05-sync/05-git-primary-architecture.md) | GitHub private primary, 서버 mirror, Agent update policy |
 | AI Ops + Hermes | [docs/06-advanced/04-ai-ops-hermes-workflow.md](./docs/06-advanced/04-ai-ops-hermes-workflow.md) | 여러 wiki/project repo를 중앙 Hermes로 점검하고 report하는 선택 운영 방식 |
+
+## 시작 Profile
+
+| Profile | 시작 문서 | 적합한 경우 |
+|---|---|---|
+| Codebase Wiki | [Start Here](./docs/00-start-here.md) | 특정 코드베이스/도메인을 LLM-friendly wiki로 compile |
+| SecondBrain | [SecondBrain Profile](./docs/02-setup/06-second-brain-profile.md) | Obsidian vault 하나에 일기, 취업, 프로젝트, source 원본을 통합 |
+| Advanced Ops | [AI Ops + Hermes](./docs/06-advanced/04-ai-ops-hermes-workflow.md) | 여러 wiki/project repo를 중앙 서버에서 점검/요약 |
 
 ## 디렉토리 트리
 

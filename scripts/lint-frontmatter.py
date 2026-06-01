@@ -28,7 +28,7 @@ CONFIDENCE_LOW_THRESHOLD_DAYS = 30
 
 VALID_TYPES = {
     "compiled", "learn", "decision", "rule", "pattern",
-    "guide", "index", "meta", "project", "journal"
+    "guide", "index", "meta", "project", "journal", "memory"
 }
 
 DATE_PLACEHOLDERS = {"YYYY-MM-DD", "<YYYY-MM-DD>"}

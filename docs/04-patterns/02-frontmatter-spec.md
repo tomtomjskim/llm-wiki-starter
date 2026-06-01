@@ -2,7 +2,7 @@
 name: frontmatter-spec
 description: LLM-friendly wiki 파일의 YAML frontmatter 표준 스펙
 type: guide
-updated: 2026-05-13
+updated: 2026-06-01
 status: active
 ---
 
@@ -28,7 +28,7 @@ updated: YYYY-MM-DD          # 필수, 마지막 수정일
 # 필수
 name: kebab-case-slug
 description: 한 줄 요약
-type: compiled | learn | decision | journal | rule | pattern | guide | index | meta | project
+type: compiled | learn | decision | journal | rule | pattern | guide | index | meta | project | memory
 updated: YYYY-MM-DD
 
 # 권장
@@ -48,6 +48,9 @@ ground_truth_refs:
 tags: [tag1, tag2]
 llm_priority: high | medium | low
 source: url | file-path | session-id
+cluster: career | projects | learning | journal | bridge | <custom>
+related:
+  - [[Related Note]]
 ---
 ```
 
@@ -65,6 +68,7 @@ source: url | file-path | session-id
 | `index` | 다른 파일들의 MOC | `_index.md` |
 | `meta` | wiki 시스템 자체 메타 문서 | `_frontmatter-spec.md` |
 | `project` | 프로젝트 컨텍스트 스냅샷 | `project-arch.md` |
+| `memory` | 환경, repo boundary 등 Agent memory 템플릿 | `environment.md` |
 
 ## Status 필드
 
@@ -154,6 +158,28 @@ updated: 2026-05-13
 status: active
 ---
 ```
+
+## 예시: SecondBrain bridge note
+
+```yaml
+---
+name: projects-to-career-evidence
+description: 프로젝트 기록을 취업 포트폴리오 증거와 연결하는 bridge note
+type: pattern
+updated: 2026-06-01
+status: draft
+confidence: medium
+cluster: bridge
+tags: [projects, career, bridge]
+related:
+  - [[Projects Hub]]
+  - [[Career Hub]]
+source:
+  - sources/github/
+---
+```
+
+`cluster`는 graph filtering과 Dataview query를 단순하게 만들기 위한 선택 필드다. `related`에는 Obsidian `[[wikilink]]` 또는 상대 경로 Markdown link를 사용할 수 있다.
 
 ## 다음
 
