@@ -140,7 +140,34 @@ wiki/generated/reference/product-run-hub-full.md
 
 이 방식은 긴 자료를 버리지 않으면서 AI가 기본 context에서 implementation spec을 과신하지 않게 만든다.
 
-### 6. Export Boundary
+### 6. Action Review Queue
+
+Digest와 inbox에 `- [ ]`가 쌓이면 source note가 task manager처럼 변한다. source note는 기록으로 두고, action review queue를 별도로 만든다.
+
+```text
+wiki/generated/action-queue/2026-06-01-open-action-review.md
+```
+
+운영 방식:
+
+- source note의 `- [ ]`는 `Action candidate:` bullet로 바꿔 원문 맥락을 보존한다.
+- action queue에는 source, candidate, theme, default disposition을 표로 모은다.
+- theme 예시는 `promotion-review`, `operations-policy`, `environment-inventory`, `project-backlog`, `digest-quality`처럼 처리 경로를 드러내는 이름을 쓴다.
+- hub 문서에서 action queue와 source note를 연결해 zero-inbound 문서를 없앤다.
+- queue의 `review_after`를 다음 주로 두고, 다음 review 때 reviewed 승격, project backlog 이관, archive 중 하나로 결정한다.
+
+목표 health state:
+
+```text
+open checkbox actions: 0
+zero inbound non-index docs: 0
+oversized reviewed docs: 0
+reviewed draft residue paths: 0
+```
+
+이 방식은 할 일을 지우는 것이 아니라, 할 일 후보를 지식 그래프 안의 검토 가능한 queue로 승격시키는 것이다.
+
+### 7. Export Boundary
 
 AI context export는 기본적으로 canonical/reviewed만 포함한다.
 
@@ -161,7 +188,8 @@ Generated/inbox를 포함하려면 `--include-generated` 또는 `--include-inbox
 | P1 | generated hub drafts | graph view를 실제 탐색 구조로 바꿈 |
 | P2 | health report | 운영 품질을 수치로 봄 |
 | P3 | reviewed cleanup + reference split | AI가 over-trust하지 않게 함 |
-| P4 | export boundary | 외부 AI에 미검토 자료가 섞이지 않게 함 |
+| P4 | action review queue | digest/inbox checkbox debt를 weekly review queue로 전환 |
+| P5 | export boundary | 외부 AI에 미검토 자료가 섞이지 않게 함 |
 
 ## LLM Audit Prompt
 

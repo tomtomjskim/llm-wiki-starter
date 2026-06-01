@@ -10,6 +10,15 @@ status: active
 
 ## Unreleased
 
+## 0.4.3 - 2026-06-01
+
+- Wiki Health Guardrails에 Action Review Queue 패턴 추가: digest/inbox에
+  흩어진 open checkbox를 source note에는 action candidate로 보존하고,
+  `wiki/generated/action-queue/YYYY-MM-DD-open-action-review.md`에서 주간
+  검토 queue로 묶는 방식을 문서화.
+- health target 예시를 `open checkbox actions`, `zero inbound`,
+  `oversized reviewed`, `reviewed draft residue`가 모두 0인 상태로 명시.
+
 ## 0.4.2 - 2026-06-01
 
 - Wiki Health Guardrails에 reviewed/reference split 패턴 추가: 긴 구현 spec과
