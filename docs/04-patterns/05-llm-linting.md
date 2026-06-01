@@ -2,7 +2,7 @@
 name: llm-linting
 description: wiki 파일의 orphan/stale/broken-refs 감지 개념과 linting 전략
 type: guide
-updated: 2026-05-13
+updated: 2026-06-01
 status: active
 ---
 
@@ -119,12 +119,14 @@ INFO: 참고용
 
 **Phase 1 (지금):** `lint-frontmatter.py`로 필수 필드만 검사.
 
-**Phase 2:** `wiki-doctor.py`로 orphan + broken refs 스크립트 추가.
+**Phase 2:** validator와 health report로 `related` broken refs, `review_after`, orphan 후보, action backlog를 점검. 상세 패턴은 [Wiki Health Guardrails](./08-wiki-health-guardrails.md)를 본다.
 
 **Phase 3:** `updated` 날짜 기반 stale 자동 감지 + 갱신 제안.
 
 **Phase 4:** MCP 서버에 lint 엔드포인트 추가 → LLM Agent가 세션마다 자동 lint.
 
 ## 다음
+
+Wiki health guardrails: [08-wiki-health-guardrails.md](./08-wiki-health-guardrails.md)
 
 멀티 디바이스 동기화: [docs/05-sync/01-comparison.md](../05-sync/01-comparison.md)

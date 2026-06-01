@@ -10,6 +10,14 @@ status: active
 
 ## Unreleased
 
+## 0.4.1 - 2026-06-01
+
+- `docs/04-patterns/08-wiki-health-guardrails.md` 추가: 실제 personal wiki
+  적대적 감사에서 나온 validator 강화, health report, generated hub layer,
+  reviewed anti-bloat, export boundary, CI parity 패턴을 일반화.
+- README 시작 profile 표에 Wiki Health guardrails 경로 추가.
+- LLM Linting 문서에서 health guardrails로 연결.
+
 ## 0.4.0 - 2026-06-01
 
 - `docs/02-setup/06-second-brain-profile.md` 추가: Obsidian vault 하나를
