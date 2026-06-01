@@ -189,6 +189,7 @@ wiki까지 바로 반영할 때:
 - SecondBrain 단계별 전환: [docs/03-workflow/05-second-brain-migration.md](./03-workflow/05-second-brain-migration.md)
 - Inter-cluster association: [docs/04-patterns/07-inter-cluster-association.md](./04-patterns/07-inter-cluster-association.md)
 - Wiki health guardrails: [docs/04-patterns/08-wiki-health-guardrails.md](./04-patterns/08-wiki-health-guardrails.md)
+- Private graph access: [docs/04-patterns/09-private-graph-access.md](./04-patterns/09-private-graph-access.md)
 - Obsidian 설정: [docs/02-setup/04-obsidian-vault-setup.md](./02-setup/04-obsidian-vault-setup.md)
 - Claude Code 연동: [docs/02-setup/03-claude-code-integration.md](./02-setup/03-claude-code-integration.md)
 - Codex 연동: [docs/02-setup/05-codex-integration.md](./02-setup/05-codex-integration.md)

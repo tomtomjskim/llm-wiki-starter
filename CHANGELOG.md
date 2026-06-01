@@ -10,6 +10,11 @@ status: active
 
 ## Unreleased
 
+## 0.4.4 - 2026-06-01
+
+- `docs/04-patterns/09-private-graph-access.md` 추가: wiki manifest, graph JSON, standalone HTML viewer를 만들고 Tailscale Serve / Wiki.js / MFA로 안전하게 보는 private graph 접근 패턴 문서화.
+- README 시작 profile 표에 Private Graph 경로 추가.
+
 ## 0.4.3 - 2026-06-01
 
 - Wiki Health Guardrails에 Action Review Queue 패턴 추가: digest/inbox에

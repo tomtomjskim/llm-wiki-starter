@@ -2,7 +2,7 @@
 
 > LLM과 함께 운영하는 개인 지식 베이스(wiki)를 즉시 시작할 수 있는 starter kit.
 
-Version: 0.4.3
+Version: 0.4.4
 
 Karpathy의 "Obsidian is the IDE; the LLM is the programmer; the wiki is the codebase" 패턴을 누구나 fork/clone해서 바로 적용할 수 있도록 구성한 레포지토리다.
 
@@ -55,6 +55,7 @@ python3 scripts/lint-frontmatter.py ~/wiki
 | Codebase Wiki | [Start Here](./docs/00-start-here.md) | 특정 코드베이스/도메인을 LLM-friendly wiki로 compile |
 | SecondBrain | [SecondBrain Profile](./docs/02-setup/06-second-brain-profile.md) | Obsidian vault 하나에 일기, 취업, 프로젝트, source 원본을 통합 |
 | Wiki Health | [Wiki Health Guardrails](./docs/04-patterns/08-wiki-health-guardrails.md) | 문서가 늘어난 뒤 validator, health report, hub layer로 품질 유지 |
+| Private Graph | [Private Graph Access](./docs/04-patterns/09-private-graph-access.md) | visual graph/link graph를 Tailscale, Wiki.js, MFA로 안전하게 보기 |
 | Advanced Ops | [AI Ops + Hermes](./docs/06-advanced/04-ai-ops-hermes-workflow.md) | 여러 wiki/project repo를 중앙 서버에서 점검/요약 |
 
 ## 디렉토리 트리

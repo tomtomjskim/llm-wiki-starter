@@ -210,4 +210,5 @@ Generated/inbox를 포함하려면 `--include-generated` 또는 `--include-inbox
 
 - Linting 기본: [LLM Linting](./05-llm-linting.md)
 - Hub/bridge 전략: [Inter-Cluster Association](./07-inter-cluster-association.md)
+- Private graph 접근: [Private Graph Access](./09-private-graph-access.md)
 - 단계별 도입: [SecondBrain Migration Stages](../03-workflow/05-second-brain-migration.md)
