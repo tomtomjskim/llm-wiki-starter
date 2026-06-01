@@ -48,7 +48,10 @@ files by source
 blank review_after count
 due review count
 open checkbox action count
+open checkbox actions by top-level
 largest documents
+oversized reviewed docs count
+reviewed draft residue paths
 zero inbound non-index docs
 markdown link count
 wikilink count
@@ -118,6 +121,25 @@ reviewed 문서는 durable memory여야 한다.
 
 긴 spec은 project repo나 generated 문서에 두고, reviewed에는 1-2 page summary와 링크만 둔다.
 
+#### Reference Split Pattern
+
+이미 `reviewed`에 긴 문서가 들어온 경우 삭제하지 말고 reference로 분리한다.
+
+```text
+wiki/reviewed/product-run-hub.md
+wiki/generated/reference/product-run-hub-full.md
+```
+
+운영 방식:
+
+- 원문 transcript, 상세 spec, 긴 command log는 `generated/reference/*-full.md`에 보존한다.
+- 원래 `reviewed` 경로에는 `Verified Facts`, `Durable Takeaways`, `Source Links`, `Next Review` 중심의 짧은 summary를 남긴다.
+- 기존 inbound link를 깨지 않기 위해 원래 `reviewed` 파일명은 유지한다.
+- full reference의 frontmatter는 `status: generated`, tag는 `full-reference`를 붙인다.
+- export 기본값은 reviewed summary만 포함하고 full reference는 명시 opt-in으로만 포함한다.
+
+이 방식은 긴 자료를 버리지 않으면서 AI가 기본 context에서 implementation spec을 과신하지 않게 만든다.
+
 ### 6. Export Boundary
 
 AI context export는 기본적으로 canonical/reviewed만 포함한다.
@@ -138,7 +160,7 @@ Generated/inbox를 포함하려면 `--include-generated` 또는 `--include-inbox
 | P0 | validator: `related`, `review_after`, obvious secret patterns | CI가 구조 오염을 즉시 잡음 |
 | P1 | generated hub drafts | graph view를 실제 탐색 구조로 바꿈 |
 | P2 | health report | 운영 품질을 수치로 봄 |
-| P3 | reviewed cleanup | AI가 over-trust하지 않게 함 |
+| P3 | reviewed cleanup + reference split | AI가 over-trust하지 않게 함 |
 | P4 | export boundary | 외부 AI에 미검토 자료가 섞이지 않게 함 |
 
 ## LLM Audit Prompt

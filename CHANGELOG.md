@@ -10,6 +10,14 @@ status: active
 
 ## Unreleased
 
+## 0.4.2 - 2026-06-01
+
+- Wiki Health Guardrails에 reviewed/reference split 패턴 추가: 긴 구현 spec과
+  troubleshooting transcript는 `wiki/generated/reference/*-full.md`로 보존하고,
+  `wiki/reviewed`에는 durable summary만 남기는 운영 원칙을 명시.
+- health report 권장 지표에 oversized reviewed docs, reviewed draft residue,
+  open checkbox actions by top-level을 추가.
+
 ## 0.4.1 - 2026-06-01
 
 - `docs/04-patterns/08-wiki-health-guardrails.md` 추가: 실제 personal wiki
