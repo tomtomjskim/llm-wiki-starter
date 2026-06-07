@@ -22,6 +22,8 @@ Before changing a domain, inspect the matching wiki folder when it exists. Treat
 - Reading relevant wiki context is expected when it exists; writing or updating wiki requires an explicit user request or an approved final update step.
 - If `~/wiki` or a referenced wiki page does not exist, continue from repository files and report that wiki context was unavailable. Do not fail the task only because wiki is missing.
 - Update compiled wiki only after code changes are implemented, tested, and reviewed.
+- Treat `reviewed`/`canonical` wiki areas as trust-elevated. Do not move generated/inbox notes into reviewed/canonical, set `status: reviewed`/`canonical`, or archive/delete wiki pages unless the user explicitly approves that exact action.
+- If you produce a promotion review, make it proposal-only: include a numbered approval shortlist (`approve 1-3`, `hold 2`) and assign non-promoted candidates a disposition (`revise`, `merge`, `keep-generated`, `archive-candidate`, `delete-candidate`, `needs-human-source-check`) with next action/revisit date.
 - If you discover stale or missing wiki knowledge during implementation, record it in the final report unless the user explicitly asks you to update wiki files immediately.
 - Run the project test command before finalizing code changes.
 - Run `python3 ~/wiki-starter/scripts/lint-frontmatter.py ~/wiki --error-only` after wiki edits when the starter repo and wiki are available.

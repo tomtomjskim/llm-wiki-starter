@@ -2,7 +2,7 @@
 name: ai-ops-hermes-workflow
 description: 여러 wiki/project repo를 중앙 Hermes 또는 AI Ops workspace로 관리하는 고급 운영 방식
 type: guide
-updated: 2026-05-20
+updated: 2026-06-07
 status: active
 ---
 
@@ -147,16 +147,29 @@ Agent 작업 후 세션 요약을 wiki inbox에 저장한다.
 ### 4. Promotion Review
 
 ```text
-inbox/generated 문서를 검토해 승격 후보를 분류한다.
+inbox/generated 문서를 검토해 승격 후보와 cleanup 후보를 분류한다.
+
+proposal-only 원칙:
+- unattended job은 report/proposal만 작성한다.
+- generated -> reviewed 이동은 직접 하지 않는다.
+- reviewed/canonical/status=reviewed/status=canonical 변경은 직접 하지 않는다.
+- archive/delete도 별도 승인 없이 수행하지 않는다.
 
 분류:
-- 삭제 후보
-- 보류 후보
-- reviewed 승격 후보
-- canonical 승격 후보
+- reviewed 승격 후보: source, suggested target, risk, one-line rationale 포함
+- canonical 승격 후보: 반드시 human/PR approval 필요
+- revise: 정리/출처 보강 후 재검토
+- merge: 기존 reviewed/canonical note에 병합 후보
+- keep-generated: digest/batch/report로 유지하고 active promotion 후보에서 제외
+- archive-candidate: 별도 승인 후 archive 후보
+- delete-candidate: 별도 승인 후 삭제 후보
+- needs-human-source-check: raw/source 확인 전 승격 불가
+
+UI가 없는 운영에서는 최종 알림에 번호형 shortlist를 포함한다.
+예: approve 1-3, hold 2, archive approve 5, delete approve 6
 ```
 
-권한: report only
+권한: generated/report only
 
 ### 5. Project Docs Audit
 

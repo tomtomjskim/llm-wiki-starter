@@ -2,7 +2,7 @@
 name: automation
 description: wiki 자동 lint, compile dry-run 등 자동화 패턴
 type: guide
-updated: 2026-05-20
+updated: 2026-06-07
 status: active
 ---
 
@@ -142,11 +142,15 @@ Hermes 또는 Agent runner = pull/check/report 실행
 - enabled wiki repo pull 가능 여부 확인
 - frontmatter lint report 생성
 - stale 문서 후보 report 생성
-- generated 문서 promotion 후보 report 생성
+- generated 문서 promotion proposal report 생성
+- UI가 없을 때 chat/issue 알림에 번호형 approval shortlist 포함
+- 비승격 후보를 `revise`, `merge`, `keep-generated`, `archive-candidate`, `delete-candidate`, `needs-human-source-check`로 분류
 
 초기 금지 자동화:
 
-- 검토 없는 canonical 반영
+- 검토 없는 reviewed/canonical 반영
+- unattended `generated -> reviewed` 이동
+- 명시 승인 없는 archive/delete
 - secret이 포함된 raw log 인덱싱
 - production 서버 write
 - DB write

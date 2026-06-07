@@ -10,6 +10,9 @@ status: active
 
 ## Unreleased
 
+- Wiki promotion review를 proposal-only trust-boundary 패턴으로 강화: unattended agent는 `generated -> reviewed`/canonical 승격, archive/delete를 직접 수행하지 않고 numbered approval shortlist와 cleanup disposition을 제안하도록 문서화.
+- AI Ops/Hermes 자동화 문서와 AGENTS template에 chat/issue 기반 승인, deferred cleanup queue, `revise`/`merge`/`keep-generated`/`archive-candidate`/`delete-candidate`/`needs-human-source-check` lifecycle을 추가.
+
 ## 0.4.4 - 2026-06-01
 
 - `docs/04-patterns/09-private-graph-access.md` 추가: wiki manifest, graph JSON, standalone HTML viewer를 만들고 Tailscale Serve / Wiki.js / MFA로 안전하게 보는 private graph 접근 패턴 문서화.

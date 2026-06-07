@@ -2,7 +2,7 @@
 name: wiki-health-guardrails
 description: 개인 wiki가 커질 때 CI, validator, health report, hub layer로 품질을 유지하는 운영 패턴
 type: guide
-updated: 2026-06-01
+updated: 2026-06-07
 status: active
 ---
 
@@ -167,7 +167,46 @@ reviewed draft residue paths: 0
 
 이 방식은 할 일을 지우는 것이 아니라, 할 일 후보를 지식 그래프 안의 검토 가능한 queue로 승격시키는 것이다.
 
-### 7. Export Boundary
+### 7. Proposal-only Promotion + Cleanup Lifecycle
+
+자동 promotion은 안전해 보이지만, `reviewed`가 "사람이 읽고 검토한 지식"이라는 의미라면 unattended agent가 직접 `generated -> reviewed`를 수행하면 trust boundary가 깨진다.
+
+권장 운영:
+
+```text
+wiki/generated/reviews/YYYY-MM-DD-promotion-review.md
+```
+
+- unattended job은 proposal report만 쓴다.
+- `wiki/reviewed/**`, `wiki/canonical/**`, `status: reviewed`, `status: canonical`은 직접 쓰지 않는다.
+- 실제 승격은 chat/issue/PR 등에서 사용자가 번호형 후보를 명시 승인한 뒤 별도 실행한다.
+- UI가 없다면 최종 알림에 바로 판단 가능한 shortlist를 포함한다.
+
+예시 응답 명령:
+
+```text
+approve 1
+approve 1-3
+hold 2
+hold all
+승인 1-3
+전체 보류
+```
+
+보류도 영구 상태가 아니다. 비승격 후보는 cleanup queue에서 다음 disposition 중 하나를 갖는다.
+
+| Disposition | Meaning | Follow-up |
+|---|---|---|
+| `revise` | 쓸 만하지만 정리/출처 보강 필요 | 보강 후 재검토 |
+| `merge` | 독립 문서보다 기존 문서 병합이 적합 | target note 제시 |
+| `keep-generated` | digest/batch/report 같은 히스토리 산출물 | active promotion 후보에서 제외 |
+| `archive-candidate` | 오래됐거나 재사용 가치 낮음 | 별도 승인 후 archive |
+| `delete-candidate` | 중복/오염/쓰레기 데이터 | 별도 승인 후 삭제 |
+| `needs-human-source-check` | 원문/맥락 확인 전 위험 | 사람이 source 확인 |
+
+핵심은 "보류"를 매주 반복하지 않는 것이다. 반복 보류되거나 저가치인 항목은 promotion shortlist가 아니라 cleanup/archive/delete recommendation으로 내려야 한다. 단, archive/delete는 별도 명시 승인 없이 자동 수행하지 않는다.
+
+### 8. Export Boundary
 
 AI context export는 기본적으로 canonical/reviewed만 포함한다.
 
@@ -189,7 +228,8 @@ Generated/inbox를 포함하려면 `--include-generated` 또는 `--include-inbox
 | P2 | health report | 운영 품질을 수치로 봄 |
 | P3 | reviewed cleanup + reference split | AI가 over-trust하지 않게 함 |
 | P4 | action review queue | digest/inbox checkbox debt를 weekly review queue로 전환 |
-| P5 | export boundary | 외부 AI에 미검토 자료가 섞이지 않게 함 |
+| P5 | proposal-only promotion + cleanup lifecycle | reviewed/canonical trust boundary와 generated 쓰레기 적치를 동시에 방지 |
+| P6 | export boundary | 외부 AI에 미검토 자료가 섞이지 않게 함 |
 
 ## LLM Audit Prompt
 
