@@ -10,6 +10,13 @@ status: active
 
 ## Unreleased
 
+## 0.5.0 - 2026-06-24
+
+- `docs/04-patterns/10-repo-topology-separate-vs-internal.md` 추가: 별도 `llm-wiki` repo와 personal-wiki 내부 `llm` namespace 운영을 비교하고, 개인 multi-server/multi-agent 환경에서는 내부 namespace가 관리 비용을 줄인다는 판단 기준을 문서화.
+- `templates/wiki-topology/internal-llm-namespace-index.md` 추가: personal wiki 내부에서 agent/codebase/ops 지식을 관리하는 index 템플릿 제공.
+- `templates/agents/AGENTS.md`에 Separate Wiki Repo와 Internal LLM Namespace 선택지를 추가.
+- Start Here, Directory Layout, SecondBrain Profile, README에서 repo topology 선택 경로를 연결.
+
 - Wiki promotion review를 proposal-only trust-boundary 패턴으로 강화: unattended agent는 `generated -> reviewed`/canonical 승격, archive/delete를 직접 수행하지 않고 numbered approval shortlist와 cleanup disposition을 제안하도록 문서화.
 - AI Ops/Hermes 자동화 문서와 AGENTS template에 chat/issue 기반 승인, deferred cleanup queue, `revise`/`merge`/`keep-generated`/`archive-candidate`/`delete-candidate`/`needs-human-source-check` lifecycle을 추가.
 

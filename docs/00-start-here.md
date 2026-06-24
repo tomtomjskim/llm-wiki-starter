@@ -42,8 +42,9 @@ status: active
 | Codebase Wiki | 이 문서의 1-7단계 | 코드베이스 도메인을 LLM-friendly wiki로 만들고 싶다 |
 | SecondBrain | [SecondBrain Profile](./02-setup/06-second-brain-profile.md) | Obsidian vault 하나에 `notes/`, `sources/`, `Home.md`를 두고 개인 자료를 연결하고 싶다 |
 | Advanced Ops | [AI Ops + Hermes](./06-advanced/04-ai-ops-hermes-workflow.md) | 여러 wiki/project repo를 중앙 서버에서 점검하고 요약하고 싶다 |
+| Repo Topology | [Separate Repo vs Internal Namespace](./04-patterns/10-repo-topology-separate-vs-internal.md) | 별도 `llm-wiki` repo와 personal-wiki 내부 `llm` namespace 중 어떤 구조가 맞는지 먼저 정하고 싶다 |
 
-개인 일기, 취업, 프로젝트, Notion/email/PDF 원본을 한 vault에 넣고 싶다면 Codebase Wiki 단계를 건너뛰고 SecondBrain profile부터 시작해도 된다.
+개인 일기, 취업, 프로젝트, Notion/email/PDF 원본을 한 vault에 넣고 싶다면 Codebase Wiki 단계를 건너뛰고 SecondBrain profile부터 시작해도 된다. 이미 여러 서버/agent가 personal wiki를 공유한다면, 별도 `llm-wiki` repo를 추가하기 전에 Repo Topology 문서의 internal `llm` namespace 방식을 검토한다.
 
 ## 1. wiki 폴더 만들기
 

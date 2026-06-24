@@ -1,11 +1,29 @@
 # AGENTS.md
 
-## LLM Wiki
+## Wiki Topology
+
+Choose one topology and delete the unused lines.
+
+### Option A: Separate Wiki Repo
 
 - Wiki root: `~/wiki`
 - Codebase wiki: `~/wiki/compiled/codebase`
 - Personal wiki: `~/wiki/personal`
-- Raw inputs: `~/wiki/raw`
+
+### Option B: Internal LLM Namespace In Personal Wiki
+
+- Personal wiki root: `~/personal-wiki`
+- Agent/codebase/ops context: `~/personal-wiki/wiki/{generated,reviewed}/llm`
+- Canonical policy: `~/personal-wiki/wiki/canonical`
+- Inbox/source notes: `~/personal-wiki/wiki/inbox/llm`
+
+Use Option B when the same personal wiki is already attached to many servers/agents and a separate `llm-wiki` repo would double sync/validation/credential overhead.
+
+## LLM Wiki
+
+- If using a separate wiki repo, use `~/wiki/compiled/codebase/<domain>/`.
+- If using an internal namespace, use `~/personal-wiki/wiki/{generated,reviewed}/llm/codebase/<domain>/`.
+- Raw/generated notes are context, not authority. Reviewed/canonical policy outranks generated notes.
 
 Before changing a domain, inspect the matching wiki folder when it exists. Treat wiki pages as context, not authority. If code and wiki conflict, trust code and update the wiki after implementation is verified.
 

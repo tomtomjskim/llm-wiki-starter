@@ -176,6 +176,23 @@ related:
 - 부족한 증거는 무엇인가?
 ```
 
+
+## Agent-Facing LLM Namespace 선택
+
+SecondBrain을 이미 여러 서버/agent의 공통 sync backbone으로 쓰는 경우, codebase/ops agent 지식을 별도 `llm-wiki` repo로 분리하지 않고 vault 내부에 `llm` namespace로 둘 수 있다.
+
+```text
+notes/                 # 사람 중심 개인 지식
+sources/               # 원본 자료
+llm/                   # 선택: agent-facing codebase/ops context
+  ├── codebase/
+  ├── environments/
+  ├── operations/
+  └── agents/
+```
+
+단, agent가 vault 전체를 bulk-load하지 않도록 Home/Hub와 agent instruction에서 entry point를 제한한다. 검토되지 않은 `llm` 초안은 context일 뿐 authority가 아니다.
+
 ## Trust Rule
 
 SecondBrain profile에서도 trust flow는 유지한다.
