@@ -113,3 +113,31 @@ chmod +x ~/wiki/.git/hooks/pre-commit
 # crontab -e
 0 9 * * 1 python3 /path/to/llm-wiki-starter/scripts/lint-frontmatter.py ~/wiki >> ~/wiki-lint.log 2>&1
 ```
+
+## export-life-os-context.py — Life OS context pack 생성
+
+`personal/life-os/canonical/`과 `personal/life-os/reviewed/` 문서를 묶어 AI
+세션에 전달할 context pack을 만든다. `raw/life-os/`,
+`personal/life-os/inbox/`, `compiled/life-os/generated/` 본문은 포함하지 않고
+경로 index만 남긴다.
+
+```bash
+python3 scripts/export-life-os-context.py --wiki-root ~/wiki --profile quick
+
+# 날짜 고정
+python3 scripts/export-life-os-context.py --wiki-root ~/wiki --profile quick --date 2026-07-06
+
+# 출력 경로 지정
+python3 scripts/export-life-os-context.py --wiki-root ~/wiki --output-dir /tmp/life-os-context
+```
+
+기본 출력:
+
+```
+~/wiki/compiled/life-os/context-packs/YYYY-MM-DD-profile/
+├── AI_HANDOFF.md
+├── MANIFEST.md
+├── CANONICAL_REVIEWED_BUNDLE.md
+├── RAW_INDEX.md
+└── SOURCE_FILES.txt
+```

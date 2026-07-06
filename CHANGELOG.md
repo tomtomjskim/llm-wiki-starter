@@ -2,13 +2,26 @@
 name: changelog
 description: LLM Wiki Starter 릴리스 변경 이력
 type: meta
-updated: 2026-05-13
+updated: 2026-07-06
 status: active
 ---
 
 # Changelog
 
 ## Unreleased
+
+## 0.6.0 - 2026-07-06
+
+- Life OS 선택 profile 추가: `docs/07-life-os/`에 개인 장기 기억, trust boundary,
+  AI context pack, Codex/Claude 세션 사용법을 문서화.
+- `templates/life-os/` 추가: session summary, promotion review, decision,
+  learning note, canonical policy, AI context pack 템플릿 제공.
+- `scripts/init-wiki.sh --life-os` 옵션 추가: 기본 wiki 구조와 함께
+  `raw/life-os`, `personal/life-os`, `compiled/life-os` 디렉토리를 생성.
+- `scripts/export-life-os-context.py` 추가: Life OS reviewed/canonical 문서를
+  AI context pack으로 내보내고 raw/inbox/generated는 index로만 기록.
+- `lint-frontmatter.py`의 Python 3.9 호환성과 template placeholder 처리를
+  회귀 테스트로 고정.
 
 ## 0.5.0 - 2026-06-24
 
