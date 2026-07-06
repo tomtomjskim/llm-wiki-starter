@@ -32,8 +32,6 @@ VALID_TYPES = {
 }
 
 DATE_PLACEHOLDERS = {"YYYY-MM-DD", "<YYYY-MM-DD>"}
-
-
 def extract_frontmatter(content: str) -> Optional[Dict[str, str]]:
     """YAML frontmatter 블록을 파싱해서 딕셔너리로 반환. 없으면 None."""
     lines = content.splitlines()
@@ -54,10 +52,11 @@ def extract_frontmatter(content: str) -> Optional[Dict[str, str]]:
 
     for line in fm_lines:
         # 주석 제거
-        if line.strip().startswith("#"):
+        stripped = line.strip()
+        if stripped.startswith("#"):
             continue
         # 단순 key: value 파싱 (중첩 없이)
-        match = re.match(r'^(\w+):\s*(.*)', line)
+        match = re.match(r'^(\w+):\s*(.*)', stripped)
         if match:
             key = match.group(1)
             value = re.split(r'\s+#', match.group(2), maxsplit=1)[0].strip().strip('"').strip("'")

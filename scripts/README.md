@@ -16,6 +16,9 @@ bash scripts/init-wiki.sh
 
 # 경로 지정
 bash scripts/init-wiki.sh /path/to/my-wiki
+
+# Life OS 선택 profile 포함
+bash scripts/init-wiki.sh --life-os /path/to/my-wiki
 ```
 
 생성되는 구조:
@@ -31,13 +34,28 @@ bash scripts/init-wiki.sh /path/to/my-wiki
     └── codebase/        # T3: 코드베이스 wiki
 ```
 
+`--life-os` 옵션을 사용하면 다음 선택 profile도 함께 생성된다:
+
+```
+~/wiki/
+├── raw/life-os/
+├── personal/life-os/
+│   ├── inbox/
+│   ├── reviewed/
+│   └── canonical/
+└── compiled/life-os/
+    ├── generated/
+    ├── hubs/
+    └── context-packs/
+```
+
 각 폴더에 `.gitkeep` 파일이 생성되어 Git이 빈 폴더를 추적할 수 있다.
 
 `.gitignore`도 자동 생성된다 (이미 있으면 건너뜀).
 
 ## lint-frontmatter.py — frontmatter 검사
 
-Python 3.6 이상 필요. 외부 라이브러리 없음 (표준 라이브러리만 사용).
+Python 3.9 이상 필요. 외부 라이브러리 없음 (표준 라이브러리만 사용).
 
 ```bash
 # wiki 전체 검사

@@ -1,15 +1,51 @@
 #!/usr/bin/env bash
 # =============================================================================
 # init-wiki.sh — wiki 디렉토리 구조 초기화
-# 사용법: bash scripts/init-wiki.sh [wiki-root]
+# 사용법: bash scripts/init-wiki.sh [--life-os] [wiki-root]
 # 기본값: ~/wiki
 # =============================================================================
 
 set -euo pipefail
 
-WIKI_ROOT="${1:-$HOME/wiki}"
+INCLUDE_LIFE_OS=0
+WIKI_ROOT="$HOME/wiki"
+
+usage() {
+  cat <<'USAGE'
+사용법: bash scripts/init-wiki.sh [--life-os] [wiki-root]
+
+옵션:
+  --life-os   Life OS 선택 profile 디렉토리도 함께 생성
+  -h, --help  도움말 출력
+USAGE
+}
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --life-os)
+      INCLUDE_LIFE_OS=1
+      shift
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    --*)
+      echo "알 수 없는 옵션: $1" >&2
+      usage >&2
+      exit 64
+      ;;
+    *)
+      WIKI_ROOT="$1"
+      shift
+      ;;
+  esac
+done
 
 echo "wiki 디렉토리를 초기화합니다: $WIKI_ROOT"
+if [ "$INCLUDE_LIFE_OS" -eq 1 ]; then
+  echo "Life OS profile 디렉토리도 함께 생성합니다."
+fi
 echo ""
 
 # --- 디렉토리 생성 -----------------------------------------------------------
@@ -21,6 +57,18 @@ dirs=(
   "$WIKI_ROOT/personal/journal"
   "$WIKI_ROOT/compiled/codebase"
 )
+
+if [ "$INCLUDE_LIFE_OS" -eq 1 ]; then
+  dirs+=(
+    "$WIKI_ROOT/raw/life-os"
+    "$WIKI_ROOT/personal/life-os/inbox"
+    "$WIKI_ROOT/personal/life-os/reviewed"
+    "$WIKI_ROOT/personal/life-os/canonical"
+    "$WIKI_ROOT/compiled/life-os/generated"
+    "$WIKI_ROOT/compiled/life-os/hubs"
+    "$WIKI_ROOT/compiled/life-os/context-packs"
+  )
+fi
 
 for dir in "${dirs[@]}"; do
   if [ -d "$dir" ]; then
@@ -42,6 +90,18 @@ gitkeep_dirs=(
   "$WIKI_ROOT/personal/journal"
   "$WIKI_ROOT/compiled/codebase"
 )
+
+if [ "$INCLUDE_LIFE_OS" -eq 1 ]; then
+  gitkeep_dirs+=(
+    "$WIKI_ROOT/raw/life-os"
+    "$WIKI_ROOT/personal/life-os/inbox"
+    "$WIKI_ROOT/personal/life-os/reviewed"
+    "$WIKI_ROOT/personal/life-os/canonical"
+    "$WIKI_ROOT/compiled/life-os/generated"
+    "$WIKI_ROOT/compiled/life-os/hubs"
+    "$WIKI_ROOT/compiled/life-os/context-packs"
+  )
+fi
 
 for dir in "${gitkeep_dirs[@]}"; do
   touch "$dir/.gitkeep"

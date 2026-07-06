@@ -11,6 +11,7 @@ Karpathy의 "Obsidian is the IDE; the LLM is the programmer; the wiki is the cod
 - 개인 지식 관리(PKM)에 LLM을 적극 활용하고 싶은 개발자
 - 코드베이스를 LLM-friendly wiki로 문서화하고 싶은 팀
 - Obsidian + Claude Code 또는 Codex 조합으로 지식 시스템을 구축하려는 사람
+- 개인 장기 기억과 Life OS profile을 선택적으로 운영하고 싶은 사람
 
 ## Quick Start (5단계)
 
@@ -58,6 +59,9 @@ python3 scripts/lint-frontmatter.py ~/wiki
 | Repo Topology | [Separate Repo vs Internal Namespace](./docs/04-patterns/10-repo-topology-separate-vs-internal.md) | 별도 `llm-wiki` repo와 personal-wiki 내부 `llm` namespace 중 선택 |
 | Private Graph | [Private Graph Access](./docs/04-patterns/09-private-graph-access.md) | visual graph/link graph를 Tailscale, Wiki.js, MFA로 안전하게 보기 |
 | Advanced Ops | [AI Ops + Hermes](./docs/06-advanced/04-ai-ops-hermes-workflow.md) | 여러 wiki/project repo를 중앙 서버에서 점검/요약 |
+| Life OS | [Life OS Profile](./docs/07-life-os/01-overview.md) | 개인 장기 기억, 세션 요약, 루틴, 결정 기록을 오염 없이 운영 |
+
+Life OS profile을 바로 생성하려면 `bash scripts/init-wiki.sh --life-os ~/wiki`를 사용한다.
 
 ## 디렉토리 트리
 
@@ -76,13 +80,15 @@ llm-wiki-starter/
 │   ├── 03-workflow/      # 4단계 파이프라인 (Collect→Compile→View→Ask)
 │   ├── 04-patterns/      # 검증된 실전 패턴
 │   ├── 05-sync/          # 멀티 디바이스 동기화와 Git primary architecture
-│   └── 06-advanced/      # MCP, 자동화 (선택)
+│   ├── 06-advanced/      # MCP, 자동화 (선택)
+│   └── 07-life-os/       # 개인 장기 기억, 루틴, AI context pack 확장
 │
 ├── templates/
 │   ├── agents/           # AGENTS.md, CLAUDE.md 템플릿
 │   ├── frontmatter/      # 파일 타입별 frontmatter 템플릿
 │   ├── compile/          # 도메인 compile 산출물 7종 템플릿
-│   └── memory-types/     # LLM Memory 4가지 타입 예시
+│   ├── memory-types/     # LLM Memory 4가지 타입 예시
+│   └── life-os/          # Life OS 선택 profile 템플릿
 │
 ├── scripts/
 │   ├── init-wiki.sh      # wiki 디렉토리 구조 생성
